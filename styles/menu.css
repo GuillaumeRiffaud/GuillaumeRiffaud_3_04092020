@@ -1,0 +1,260 @@
+@font-face {
+  font-family: 'shrikhand';
+  src: url("../fonts/Shrikhand-Regular.eot");
+  src: url("../fonts/Shrikhand-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'robotoregular';
+  src: url("../fonts/Roboto-Regular-webfont.eot");
+  src: url("../fonts/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular-webfont.woff2") format("woff2"), url("../fonts/Roboto-Regular-webfont.woff") format("woff"), url("../fonts/Roboto-Regular-webfont.ttf") format("truetype"), url("../fonts/Roboto-Regular-webfont.svg#robotoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-size: 18px;
+  font-family: 'robotoregular', Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  -webkit-box-shadow: 0 8px 10px grey;
+          box-shadow: 0 8px 10px grey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header svg {
+  margin-left: 50%;
+  margin-top: 40%;
+  fill: black;
+  height: 50px;
+  width: 50px;
+}
+
+header svg:hover {
+  fill: #9356DC;
+}
+
+h1 {
+  font-family: 'shrikhand', Arial, Helvetica, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-bottom: 0;
+  /* sets font size and icons size adapts automatically */
+  font-size: 3rem;
+}
+
+h1 .ico {
+  display: inline-block;
+  vertical-align: middle;
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
+svg {
+  fill: currentColor;
+}
+
+svg:hover {
+  fill: #9356DC;
+}
+
+.--picked {
+  height: 40px;
+  width: 40px;
+}
+
+.background {
+  margin-top: 0;
+  background-image: url(../images/la_palette_du_gout_full.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.background main {
+  padding-top: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.background main h2 {
+  display: inline-block;
+  background: white;
+  border-radius: 5rem;
+  text-align: center;
+  margin-top: 0;
+  /* sets font size and icons size adapts automatically */
+  font-size: 2rem;
+  width: 30%;
+  margin-right: 31%;
+  margin-left: 31%;
+}
+
+.background main h2 .ico {
+  display: inline-block;
+  vertical-align: middle;
+  height: 3rem;
+  width: 3rem;
+}
+
+.background main section {
+  width: 30%;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 1em;
+}
+
+.background main section h3 {
+  /* sets font size and icons size adapts automatically */
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.background main section h3 .ico {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.background main section h3 span {
+  border-bottom: 3px solid #99E2D0;
+}
+
+.background main section article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  height: 100px;
+  margin: 5%;
+  border-radius: 1em;
+  padding-left: 5%;
+}
+
+.background main section article .desc {
+  width: 70%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.background main section article .desc h4,
+.background main section article .desc p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.background main section article p {
+  width: 15%;
+}
+
+.background main section article .--picked {
+  display: none;
+}
+
+.background main section article .ico {
+  fill: white;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+}
+
+.background main section article:hover {
+  background: white;
+}
+
+.background main section article:hover .--picked {
+  display: inherit;
+  width: 15%;
+  height: 100%;
+  background: #99E2D0;
+}
+
+.background main section article:hover .desc {
+  width: 70%;
+}
+
+.btn {
+  margin: 5% 50% 5% 45%;
+  display: inline-block;
+  color: white;
+  cursor: pointer;
+  /* sets font size and icons size adapts automatically */
+  font-size: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 5rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(#FF79DA, #9356DC);
+}
+
+.btn .ico {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+footer {
+  background-color: #353535;
+  color: white;
+  padding: 1% 1% 1% 3%;
+  /* sets font size and icons size adapts automatically */
+  font-size: 1rem;
+}
+
+footer .ico {
+  display: inline-block;
+  vertical-align: middle;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer h2 {
+  font-family: 'shrikhand', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  /* sets font size and icons size adapts automatically */
+  font-size: 2rem;
+}
+
+footer h2 .ico {
+  display: inline-block;
+  vertical-align: middle;
+  height: 3rem;
+  width: 3rem;
+}
+
+footer ul {
+  padding-left: 0;
+}
+
+footer li {
+  list-style-type: none;
+  padding: 8px;
+}
+/*# sourceMappingURL=menu.css.map */
