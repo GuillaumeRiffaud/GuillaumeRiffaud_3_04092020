@@ -73,14 +73,15 @@ svg:hover {
   width: 40px;
 }
 
-.background {
+.bg {
   margin-top: 0;
-  background-image: url(../images/la_palette_du_gout_full.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  text-align: center;
+  background-image: url(../images/la_palette_du_gout_full.jpg);
 }
 
-.background main {
+main {
   padding-top: 3%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -92,11 +93,15 @@ svg:hover {
           justify-content: space-evenly;
 }
 
-.background main h2 {
+main h2 {
   display: inline-block;
   background: white;
   border-radius: 5rem;
-  text-align: center;
+  text-align: left;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-left: 1%;
   margin-top: 0;
   /* sets font size and icons size adapts automatically */
   font-size: 2rem;
@@ -105,37 +110,44 @@ svg:hover {
   margin-left: 31%;
 }
 
-.background main h2 .ico {
+main h2 .ico {
   display: inline-block;
   vertical-align: middle;
   height: 3rem;
   width: 3rem;
 }
 
-.background main section {
+@media screen and (orientation: portrait) {
+  main h2 {
+    margin-top: 300px;
+  }
+}
+
+section {
   width: 30%;
   background: rgba(255, 255, 255, 0.5);
   border-radius: 1em;
 }
 
-.background main section h3 {
+section h3 {
   /* sets font size and icons size adapts automatically */
   font-size: 1.5rem;
   text-align: center;
 }
 
-.background main section h3 .ico {
+section h3 .ico {
   display: inline-block;
   vertical-align: middle;
   height: 2.25rem;
   width: 2.25rem;
 }
 
-.background main section h3 span {
+section h3 span {
   border-bottom: 3px solid #99E2D0;
 }
 
-.background main section article {
+article {
+  text-align: left;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -152,52 +164,53 @@ svg:hover {
   padding-left: 5%;
 }
 
-.background main section article .desc {
-  width: 70%;
+article .desc {
+  width: 300px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 
-.background main section article .desc h4,
-.background main section article .desc p {
+article .desc h4,
+article .desc p {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-.background main section article p {
+article em {
   width: 15%;
 }
 
-.background main section article .--picked {
+article .--picked {
   display: none;
 }
 
-.background main section article .ico {
+article .ico {
   fill: white;
   width: 50px;
   height: 50px;
   margin: auto;
 }
 
-.background main section article:hover {
+article:hover {
   background: white;
 }
 
-.background main section article:hover .--picked {
+article:hover .--picked {
   display: inherit;
   width: 15%;
   height: 100%;
   background: #99E2D0;
 }
 
-.background main section article:hover .desc {
-  width: 70%;
+article:hover .desc {
+  width: 240px;
 }
 
 .btn {
-  margin: 5% 50% 5% 45%;
   display: inline-block;
+  margin-top: 5%;
+  margin-bottom: 5%;
   color: white;
   cursor: pointer;
   /* sets font size and icons size adapts automatically */

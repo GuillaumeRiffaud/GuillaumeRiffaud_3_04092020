@@ -18,6 +18,9 @@
     $clr-secondary: #FF79DA;
     $clr-tertiary: #99E2D0;
     $clr-footer: #353535;
+    $breakpoints: ( mobile: 599px,
+    tablet: 999px,
+    );
     @mixin content-size($size) {
         /* sets font size and icons size adapts automatically */
         font-size: $size;
@@ -26,6 +29,12 @@
             vertical-align: middle;
             height: $size*1.5;
             width: $size*1.5;
+        }
+    }
+    
+    @mixin mobile-only {
+        @media screen and (orientation: portrait) {
+            @content;
         }
     }
     
@@ -74,90 +83,101 @@
         width: 40px;
     }
     
-    .background {
+    .bg {
         margin-top: 0;
-        background-image: url(../images/la_palette_du_gout_full.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        main {
-            padding-top: 3%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            h2 {
-                display: inline-block;
-                background: white;
-                border-radius: 5rem;
-                text-align: center;
-                margin-top: 0;
-                @include content-size(2rem);
-                width: 30%;
-                margin-right: 31%;
-                margin-left: 31%;
+        text-align: center;
+        background-image: url(../images/la_palette_du_gout_full.jpg);
+    }
+    
+    main {
+        padding-top: 3%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        h2 {
+            display: inline-block;
+            background: white;
+            border-radius: 5rem;
+            text-align: left;
+            align-self: center;
+            padding-left: 1%;
+            margin-top: 0;
+            @include content-size(2rem);
+            width: 30%;
+            margin-right: 31%;
+            margin-left: 31%;
+            @include mobile-only() {
+                margin-top: 300px;
             }
-            section {
-                width: 30%;
-                background: rgba(white, .5);
-                border-radius: 1em;
-                h3 {
-                    @include content-size(1.5rem);
-                    text-align: center;
-                    span {
-                        border-bottom: 3px solid $clr-tertiary;
-                    }
-                }
-                article {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    overflow: hidden;
-                    height: 100px;
-                    margin: 5%;
-                    border-radius: 1em;
-                    padding-left: 5%;
-                    .desc {
-                        width: 70%;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                        white-space: nowrap;
-                        h4,
-                        p {
-                            margin-top: 1rem;
-                            margin-bottom: 1rem;
-                        }
-                    }
-                    p {
-                        width: 15%;
-                    }
-                    .--picked {
-                        display: none;
-                    }
-                    .ico {
-                        fill: white;
-                        width: 50px;
-                        height: 50px;
-                        margin: auto;
-                    }
-                    &:hover {
-                        background: white;
-                        .--picked {
-                            display: inherit;
-                            width: 15%;
-                            height: 100%;
-                            background: $clr-tertiary;
-                        }
-                        .desc {
-                            width: 70%;
-                        }
-                    }
-                }
+        }
+    }
+    
+    section {
+        width: 30%;
+        background: rgba(white, .5);
+        border-radius: 1em;
+        h3 {
+            @include content-size(1.5rem);
+            text-align: center;
+            span {
+                border-bottom: 3px solid $clr-tertiary;
+            }
+        }
+    }
+    
+    article {
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        height: 100px;
+        margin: 5%;
+        border-radius: 1em;
+        padding-left: 5%;
+        .desc {
+            width: 300px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            h4,
+            p {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+        em {
+            width: 15%;
+        }
+        .--picked {
+            display: none;
+        }
+        .ico {
+            fill: white;
+            width: 50px;
+            height: 50px;
+            margin: auto;
+        }
+        &:hover {
+            background: white;
+            .--picked {
+                display: inherit;
+                width: 15%;
+                height: 100%;
+                background: $clr-tertiary;
+            }
+            .desc {
+                width: 240px;
             }
         }
     }
     
     .btn {
-        margin: 5% 50% 5% 45%;
         display: inline-block;
+        margin-top: 5%;
+        margin-bottom: 5%;
         color: white;
         cursor: pointer;
         @include content-size(1.5rem);
