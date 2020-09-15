@@ -14,14 +14,24 @@
   font-style: normal;
 }
 
-body {
+html {
   font-size: 18px;
+}
+
+@media screen and (orientation: portrait) {
+  html {
+    font-size: 30px;
+  }
+}
+
+body {
   font-family: 'robotoregular', Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
 header {
   width: 100%;
+  height: 10%;
   -webkit-box-shadow: 0 8px 10px grey;
           box-shadow: 0 8px 10px grey;
 }
@@ -30,6 +40,7 @@ h1 {
   font-family: 'shrikhand', Arial, Helvetica, sans-serif;
   text-align: center;
   margin-top: 0;
+  margin-bottom: 0;
   padding-top: 1%;
   padding-bottom: 1%;
   /* sets font size and icons size adapts automatically */
@@ -51,10 +62,18 @@ svg:hover {
   fill: #9356DC;
 }
 
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
 .intro {
-  margin-left: 30%;
   text-align: center;
-  min-height: 100%;
 }
 
 .intro h2 {
@@ -104,58 +123,69 @@ svg:hover {
   width: 2.25rem;
 }
 
+.btn:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff93e1), to(#a16be0));
+  background: linear-gradient(#ff93e1, #a16be0);
+}
+
 nav {
   background-color: white;
-  max-width: -webkit-fit-content;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
-  min-width: 20%;
-  position: fixed;
-  left: 0px;
-  top: 120px;
-  border: 2px solid #9356DC;
+  border-top: 2px solid #9356DC;
+  border-bottom: 2px solid #9356DC;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   /* sets font size and icons size adapts automatically */
-  font-size: 1.2rem;
-  padding-right: 2%;
-  padding-bottom: 2%;
+  font-size: 1rem;
 }
 
 nav .ico {
   display: inline-block;
   vertical-align: middle;
-  height: 1.8rem;
-  width: 1.8rem;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 nav h2 {
-  margin-left: 10%;
+  padding-left: 2%;
+  margin: 1%;
   /* sets font size and icons size adapts automatically */
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 nav h2 .ico {
   display: inline-block;
   vertical-align: middle;
-  height: 3rem;
-  width: 3rem;
+  height: 2.25rem;
+  width: 2.25rem;
 }
 
-nav a {
-  text-decoration: none;
-  color: black;
+nav ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  height: 100%;
+  margin: 1%;
 }
 
 nav li {
-  display: block;
-  margin: 3%;
-  padding: 2%;
-  -webkit-box-shadow: 2px 5px 5px grey;
-          box-shadow: 2px 5px 5px grey;
-  border-radius: .5rem;
+  display: inline-block;
+  padding: 1% 1%;
+  margin-left: auto;
+}
+
+nav .--activestep {
+  color: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 1rem;
 }
 
 main {
-  margin-left: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -220,16 +250,16 @@ main a .new .ico {
   width: 2.25rem;
 }
 
-main h3,
-main p {
+main a h3,
+main a p {
   margin-left: 3%;
 }
 
-main article {
+main a article {
   position: relative;
 }
 
-main .heart {
+main a .heart {
   position: absolute;
   right: 20px;
   top: 20px;

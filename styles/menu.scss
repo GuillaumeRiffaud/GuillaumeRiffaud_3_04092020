@@ -9,7 +9,7 @@
     @font-face {
         font-family: 'robotoregular';
         src: url('../fonts/Roboto-Regular-webfont.eot');
-        src: url('../fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto-Regular-webfont.woff2') format('woff2'), url('../fonts/Roboto-Regular-webfont.woff') format('woff'), url('../fonts/Roboto-Regular-webfont.ttf') format('truetype'), url('../fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+        src: url('../fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto-Regular-webfont.woff') format('woff'), url('../fonts/Roboto-Regular-webfont.ttf') format('truetype'), url('../fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg');
         font-weight: normal;
         font-style: normal;
     }
@@ -35,12 +35,18 @@
         }
     }
     
-    body {
+    html {
         font-size: 18px;
+        @include mobile-only() {
+            font-size: 30px;
+        }
+    }
+    
+    body {
         font-family: 'robotoregular', Arial, Helvetica, sans-serif;
         margin: 0;
         @include mobile-only() {
-            width: 500px;
+            width: 100%;
             margin: 0;
         }
     }
@@ -85,8 +91,8 @@
         background-repeat: no-repeat;
         text-align: center;
         @include mobile-only() {
-            background-size: 500px 333px;
-            padding-top: 300px;
+            background-size: 100%;
+            padding-top: 58%;
         }
     }
     
@@ -141,8 +147,8 @@
                 padding-top: 5%;
             }
             .ico {
-                height: 30px;
-                width: 30px;
+                height: 40px;
+                width: 40px;
             }
         }
     }
@@ -203,8 +209,8 @@
         }
         .ico {
             fill: white;
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             margin: auto;
         }
         &:hover {

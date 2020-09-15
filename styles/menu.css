@@ -9,20 +9,29 @@
 @font-face {
   font-family: 'robotoregular';
   src: url("../fonts/Roboto-Regular-webfont.eot");
-  src: url("../fonts/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular-webfont.woff2") format("woff2"), url("../fonts/Roboto-Regular-webfont.woff") format("woff"), url("../fonts/Roboto-Regular-webfont.ttf") format("truetype"), url("../fonts/Roboto-Regular-webfont.svg#robotoregular") format("svg");
+  src: url("../fonts/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular-webfont.woff") format("woff"), url("../fonts/Roboto-Regular-webfont.ttf") format("truetype"), url("../fonts/Roboto-Regular-webfont.svg#robotoregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
-body {
+html {
   font-size: 18px;
+}
+
+@media screen and (orientation: portrait) {
+  html {
+    font-size: 30px;
+  }
+}
+
+body {
   font-family: 'robotoregular', Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
 @media screen and (orientation: portrait) {
   body {
-    width: 500px;
+    width: 100%;
     margin: 0;
   }
 }
@@ -84,8 +93,8 @@ svg:hover {
 
 @media screen and (orientation: portrait) {
   .bg {
-    background-size: 500px 333px;
-    padding-top: 300px;
+    background-size: 100%;
+    padding-top: 58%;
   }
 }
 
@@ -178,8 +187,8 @@ main h2 .ico {
 }
 
 main h2 .ico {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
 }
 
 section {
@@ -270,8 +279,8 @@ article .--picked {
 
 article .ico {
   fill: white;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   margin: auto;
 }
 

@@ -29,14 +29,27 @@ $clr-footer: #353535;
     }
 }
 
-body {
+@mixin mobile-only {
+    @media screen and (orientation: portrait) {
+        @content;
+    }
+}
+
+html {
     font-size: 18px;
+    @include mobile-only() {
+        font-size: 30px;
+    }
+}
+
+body {
     font-family: 'robotoregular', Arial, Helvetica, sans-serif;
     margin: 0;
 }
 
 header {
     width: 100%;
+    height: 10%;
     box-shadow: 0 8px 10px grey;
 }
 
@@ -44,6 +57,7 @@ h1 {
     font-family: 'shrikhand', Arial, Helvetica, sans-serif;
     text-align: center;
     margin-top: 0;
+    margin-bottom: 0;
     padding-top: 1%;
     padding-bottom: 1%;
     @include content-size(3rem);
@@ -56,10 +70,13 @@ svg {
     }
 }
 
+section {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 .intro {
-    margin-left: 30%;
     text-align: center;
-    min-height: 100%;
     h2 {
         @include content-size(3.5rem);
         margin: 5%;
@@ -80,38 +97,42 @@ svg {
     padding: 1.85rem 3rem;
     border-radius: 10rem;
     background: linear-gradient($clr-secondary, $clr-primary);
+    &:hover {
+        background: linear-gradient(lighten($clr-secondary, 5), lighten($clr-primary, 5));
+    }
 }
 
 nav {
     background-color: white;
-    max-width: fit-content;
-    min-width: 20%;
-    position: fixed;
-    left: 0px;
-    top: 120px;
-    border: 2px solid $clr-primary;
-    @include content-size(1.2rem);
-    padding-right: 2%;
-    padding-bottom: 2%;
+    border-top: 2px solid $clr-primary;
+    border-bottom: 2px solid $clr-primary;
+    display: flex;
+    align-items: center;
+    @include content-size(1rem);
     h2 {
-        margin-left: 10%;
-        @include content-size(2rem);
+        padding-left: 2%;
+        margin: 1%;
+        @include content-size(1.5rem);
     }
-    a {
-        text-decoration: none;
-        color: black;
+    ol {
+        display: flex;
+        width: 80%;
+        height: 100%;
+        margin: 1%;
     }
     li {
-        display: block;
-        margin: 3%;
-        padding: 2%;
-        box-shadow: 2px 5px 5px grey;
-        border-radius: .5rem;
+        display: inline-block;
+        padding: 1% 1%;
+        margin-left: auto;
+    }
+    .--activestep {
+        color: white;
+        background: linear-gradient($clr-secondary, $clr-primary);
+        border-radius: 1rem;
     }
 }
 
 main {
-    margin-left: 30%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -152,20 +173,20 @@ main {
                 color: darken($clr-tertiary, 40%);
             }
         }
-    }
-    h3,
-    p {
-        margin-left: 3%;
-    }
-    article {
-        position: relative;
-    }
-    .heart {
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        height: 30px;
-        width: 30px;
+        h3,
+        p {
+            margin-left: 3%;
+        }
+        article {
+            position: relative;
+        }
+        .heart {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            height: 30px;
+            width: 30px;
+        }
     }
 }
 
