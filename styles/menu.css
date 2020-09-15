@@ -20,6 +20,13 @@ body {
   margin: 0;
 }
 
+@media screen and (orientation: portrait) {
+  body {
+    width: 500px;
+    margin: 0;
+  }
+}
+
 header {
   width: 100%;
   -webkit-box-shadow: 0 8px 10px grey;
@@ -68,17 +75,58 @@ svg:hover {
   fill: #9356DC;
 }
 
-.--picked {
-  height: 40px;
-  width: 40px;
-}
-
 .bg {
   margin-top: 0;
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
+}
+
+@media screen and (orientation: portrait) {
+  .bg {
+    background-size: 500px 333px;
+    padding-top: 300px;
+  }
+}
+
+.bg--menu1 {
   background-image: url(../images/la_palette_du_gout_full.jpg);
+}
+
+@media screen and (orientation: portrait) {
+  .bg--menu1 {
+    background-image: url(../images/la_palette_du_gout_resize.jpg);
+  }
+}
+
+.bg--menu2 {
+  background-image: url(../images/la_note_enchantee_full.jpg);
+}
+
+@media screen and (orientation: portrait) {
+  .bg--menu2 {
+    background-image: url(../images/la_note_enchantee_resize.jpg);
+  }
+}
+
+.bg--menu3 {
+  background-image: url(../images/a_la_francaise_full.jpg);
+}
+
+@media screen and (orientation: portrait) {
+  .bg--menu3 {
+    background-image: url(../images/a_la_francaise_resize.jpg);
+  }
+}
+
+.bg--menu4 {
+  background-image: url(../images/le_delice_des_sens_full.jpg);
+}
+
+@media screen and (orientation: portrait) {
+  .bg--menu4 {
+    background-image: url(../images/le_delice_des_sens_resize.jpg);
+  }
 }
 
 main {
@@ -94,20 +142,24 @@ main {
 }
 
 main h2 {
-  display: inline-block;
+  font-family: 'shrikhand', Arial, Helvetica, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: white;
   border-radius: 5rem;
-  text-align: left;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  padding-left: 1%;
-  margin-top: 0;
+  padding: 1% 5%;
   /* sets font size and icons size adapts automatically */
   font-size: 2rem;
-  width: 30%;
-  margin-right: 31%;
-  margin-left: 31%;
+  width: 50%;
+  margin-right: 20%;
+  margin-left: 20%;
 }
 
 main h2 .ico {
@@ -119,8 +171,15 @@ main h2 .ico {
 
 @media screen and (orientation: portrait) {
   main h2 {
-    margin-top: 300px;
+    width: 100%;
+    margin: 0;
+    padding-top: 5%;
   }
+}
+
+main h2 .ico {
+  height: 30px;
+  width: 30px;
 }
 
 section {
@@ -133,6 +192,8 @@ section h3 {
   /* sets font size and icons size adapts automatically */
   font-size: 1.5rem;
   text-align: center;
+  text-transform: uppercase;
+  font-weight: normal;
 }
 
 section h3 .ico {
@@ -144,6 +205,19 @@ section h3 .ico {
 
 section h3 span {
   border-bottom: 3px solid #99E2D0;
+}
+
+@media screen and (orientation: portrait) {
+  section h3 {
+    margin-left: 7%;
+    text-align: left;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  section {
+    width: 100%;
+  }
 }
 
 article {
@@ -164,21 +238,30 @@ article {
   padding-left: 5%;
 }
 
+@media screen and (orientation: portrait) {
+  article {
+    -webkit-box-shadow: 0px 0px 20px 4px lightgrey;
+            box-shadow: 0px 0px 20px 4px lightgrey;
+  }
+}
+
 article .desc {
-  width: 300px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+  width: 85%;
 }
 
 article .desc h4,
 article .desc p {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 article em {
+  display: inline-block;
   width: 15%;
+  font-style: normal;
 }
 
 article .--picked {
@@ -187,8 +270,8 @@ article .--picked {
 
 article .ico {
   fill: white;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   margin: auto;
 }
 
@@ -204,7 +287,7 @@ article:hover .--picked {
 }
 
 article:hover .desc {
-  width: 240px;
+  width: 70%;
 }
 
 .btn {
