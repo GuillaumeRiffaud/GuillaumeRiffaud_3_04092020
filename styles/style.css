@@ -58,10 +58,6 @@ svg {
   fill: currentColor;
 }
 
-svg:hover {
-  fill: #9356DC;
-}
-
 section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -138,8 +134,17 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   /* sets font size and icons size adapts automatically */
   font-size: 1rem;
+}
+
+@media screen and (orientation: portrait) {
+  nav {
+    display: none;
+  }
 }
 
 nav .ico {
@@ -167,6 +172,10 @@ nav ol {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0;
   width: 80%;
   height: 100%;
   margin: 1%;
@@ -175,7 +184,13 @@ nav ol {
 nav li {
   display: inline-block;
   padding: 1% 1%;
-  margin-left: auto;
+  width: 275px;
+  white-space: nowrap;
+}
+
+nav li span {
+  display: inline-block;
+  margin-right: 5%;
 }
 
 nav .--activestep {

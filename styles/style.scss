@@ -65,9 +65,6 @@ h1 {
 
 svg {
     fill: currentColor;
-    &:hover {
-        fill: $clr-primary;
-    }
 }
 
 section {
@@ -103,11 +100,15 @@ section {
 }
 
 nav {
+    @include mobile-only() {
+        display: none;
+    }
     background-color: white;
     border-top: 2px solid $clr-primary;
     border-bottom: 2px solid $clr-primary;
     display: flex;
     align-items: center;
+    justify-content: start;
     @include content-size(1rem);
     h2 {
         padding-left: 2%;
@@ -116,6 +117,8 @@ nav {
     }
     ol {
         display: flex;
+        justify-content: space-between;
+        padding: 0;
         width: 80%;
         height: 100%;
         margin: 1%;
@@ -123,7 +126,12 @@ nav {
     li {
         display: inline-block;
         padding: 1% 1%;
-        margin-left: auto;
+        width: 275px;
+        white-space: nowrap;
+        span {
+            display: inline-block;
+            margin-right: 5%;
+        }
     }
     .--activestep {
         color: white;
