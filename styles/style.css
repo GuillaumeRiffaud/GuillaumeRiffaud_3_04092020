@@ -9,7 +9,7 @@
 @font-face {
   font-family: 'robotoregular';
   src: url("../fonts/Roboto-Regular-webfont.eot");
-  src: url("../fonts/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular-webfont.woff2") format("woff2"), url("../fonts/Roboto-Regular-webfont.woff") format("woff"), url("../fonts/Roboto-Regular-webfont.ttf") format("truetype"), url("../fonts/Roboto-Regular-webfont.svg#robotoregular") format("svg");
+  src: url("../fonts/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Regular-webfont.woff") format("woff"), url("../fonts/Roboto-Regular-webfont.ttf") format("truetype"), url("../fonts/Roboto-Regular-webfont.svg#robotoregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -68,8 +68,18 @@ section {
           flex-direction: column-reverse;
 }
 
+@media screen and (orientation: portrait) {
+  section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .intro {
   text-align: center;
+  margin-bottom: 10%;
 }
 
 .intro h2 {
@@ -85,6 +95,19 @@ section {
   width: 5.25rem;
 }
 
+@media screen and (orientation: portrait) {
+  .intro h2 {
+    /* sets font size and icons size adapts automatically */
+    font-size: 2rem;
+  }
+  .intro h2 .ico {
+    display: inline-block;
+    vertical-align: middle;
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
 .intro p {
   /* sets font size and icons size adapts automatically */
   font-size: 2rem;
@@ -97,6 +120,20 @@ section {
   vertical-align: middle;
   height: 3rem;
   width: 3rem;
+}
+
+@media screen and (orientation: portrait) {
+  .intro p {
+    /* sets font size and icons size adapts automatically */
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  .intro p .ico {
+    display: inline-block;
+    vertical-align: middle;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
 }
 
 .btn {
@@ -124,6 +161,20 @@ section {
   background: linear-gradient(#ff93e1, #a16be0);
 }
 
+@media screen and (orientation: portrait) {
+  .btn {
+    /* sets font size and icons size adapts automatically */
+    font-size: 1.2rem;
+    padding: 1.3rem 2rem;
+  }
+  .btn .ico {
+    display: inline-block;
+    vertical-align: middle;
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+}
+
 nav {
   background-color: white;
   border-top: 2px solid #9356DC;
@@ -141,17 +192,21 @@ nav {
   font-size: 1rem;
 }
 
-@media screen and (orientation: portrait) {
-  nav {
-    display: none;
-  }
-}
-
 nav .ico {
   display: inline-block;
   vertical-align: middle;
   height: 1.5rem;
   width: 1.5rem;
+}
+
+@media screen and (orientation: portrait) {
+  nav {
+    border: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 nav h2 {
@@ -168,6 +223,13 @@ nav h2 .ico {
   width: 2.25rem;
 }
 
+@media screen and (orientation: portrait) {
+  nav h2 {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+}
+
 nav ol {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -181,6 +243,19 @@ nav ol {
   margin: 1%;
 }
 
+@media screen and (orientation: portrait) {
+  nav ol {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+}
+
 nav li {
   display: inline-block;
   padding: 1% 1%;
@@ -191,13 +266,44 @@ nav li {
 nav li span {
   display: inline-block;
   margin-right: 5%;
+  background-color: #9356DC;
+  border-radius: 50%;
+  text-align: center;
+  height: 1.5rem;
+  width: 1.5rem;
+  color: white;
+}
+
+@media screen and (orientation: portrait) {
+  nav li {
+    width: 70%;
+    -webkit-box-shadow: 0px 0px 20px 4px lightgrey;
+            box-shadow: 0px 0px 20px 4px lightgrey;
+    padding: 1.5rem 2rem;
+    border-radius: 1.5rem;
+    margin: 2%;
+    font-weight: bold;
+  }
+  nav li span {
+    background-color: #9356DC;
+    border-radius: 50%;
+    text-align: center;
+    height: 1.5rem;
+    width: 1.5rem;
+    color: white;
+    font-weight: normal;
+    position: absolute;
+    left: 6%;
+  }
 }
 
 nav .--activestep {
-  color: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
-  background: linear-gradient(#FF79DA, #9356DC);
+  background-color: #e4d5f6;
   border-radius: 1rem;
+}
+
+nav .--activestep svg {
+  fill: #9356DC;
 }
 
 main {
@@ -209,6 +315,7 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 15%;
 }
 
 main h2 {
@@ -238,10 +345,20 @@ main a {
   position: relative;
 }
 
+@media screen and (orientation: portrait) {
+  main a {
+    width: 90%;
+  }
+}
+
 main a img {
   max-width: 100%;
   max-height: 80%;
   z-index: 1;
+}
+
+main a:hover img {
+  opacity: .5;
 }
 
 main a .new {
@@ -280,6 +397,13 @@ main a .heart {
   top: 20px;
   height: 30px;
   width: 30px;
+}
+
+@media screen and (orientation: portrait) {
+  main a .heart {
+    height: 50px;
+    width: 50px;
+  }
 }
 
 footer {

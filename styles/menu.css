@@ -147,13 +147,21 @@ nav li {
 nav li span {
   display: inline-block;
   margin-right: 5%;
+  background-color: #9356DC;
+  border-radius: 50%;
+  text-align: center;
+  height: 1.5rem;
+  width: 1.5rem;
+  color: white;
 }
 
 nav .--activestep {
-  color: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
-  background: linear-gradient(#FF79DA, #9356DC);
+  background-color: #e4d5f6;
   border-radius: 1rem;
+}
+
+nav .--activestep svg {
+  fill: #9356DC;
 }
 
 .bg {

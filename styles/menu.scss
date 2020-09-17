@@ -114,12 +114,20 @@
             span {
                 display: inline-block;
                 margin-right: 5%;
+                background-color: $clr-primary;
+                border-radius: 50%;
+                text-align: center;
+                height: 1.5rem;
+                width: 1.5rem;
+                color: white;
             }
         }
         .--activestep {
-            color: white;
-            background: linear-gradient($clr-secondary, $clr-primary);
+            background-color: lighten($clr-primary, 30);
             border-radius: 1rem;
+            svg {
+                fill: $clr-primary;
+            }
         }
     }
     
