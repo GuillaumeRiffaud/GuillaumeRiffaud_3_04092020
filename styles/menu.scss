@@ -177,12 +177,11 @@
         justify-content: space-evenly;
         h2 {
             font-family: 'shrikhand', Arial, Helvetica, sans-serif;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: left;
             background: white;
             border-radius: 5rem;
             padding: 1% 5%;
+            position: relative;
             @include content-size(2rem);
             width: 50%;
             margin-right: 20%;
@@ -195,6 +194,15 @@
             .ico {
                 height: 40px;
                 width: 40px;
+                position: absolute;
+                right: 5%;
+            }
+            .--liked {
+                opacity: 0;
+                transition: 500ms;
+                &:hover {
+                    opacity: 1;
+                }
             }
         }
     }

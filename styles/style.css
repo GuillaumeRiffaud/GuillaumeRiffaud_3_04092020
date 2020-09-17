@@ -391,7 +391,7 @@ main a article {
   position: relative;
 }
 
-main a .heart {
+main a .ico {
   position: absolute;
   right: 20px;
   top: 20px;
@@ -400,10 +400,20 @@ main a .heart {
 }
 
 @media screen and (orientation: portrait) {
-  main a .heart {
+  main a .ico {
     height: 50px;
     width: 50px;
   }
+}
+
+main a .--liked {
+  opacity: 0;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+main a .--liked:hover {
+  opacity: 1;
 }
 
 footer {

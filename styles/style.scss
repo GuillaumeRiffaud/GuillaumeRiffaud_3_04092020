@@ -248,7 +248,7 @@ main {
         article {
             position: relative;
         }
-        .heart {
+        .ico {
             position: absolute;
             right: 20px;
             top: 20px;
@@ -257,6 +257,13 @@ main {
             @include mobile-only() {
                 height: 50px;
                 width: 50px;
+            }
+        }
+        .--liked {
+            opacity: 0;
+            transition: 500ms;
+            &:hover {
+                opacity: 1;
             }
         }
     }
