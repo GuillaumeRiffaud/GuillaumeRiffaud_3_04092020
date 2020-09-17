@@ -355,11 +355,26 @@ article em {
 }
 
 article .--picked {
-  display: none;
+  width: 0%;
+  height: 100%;
+  background: #99E2D0;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-property: width;
+  transition-property: width;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+}
+
+article .--picked svg {
+  fill: none;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
 }
 
 article .ico {
-  fill: white;
   width: 35px;
   height: 35px;
   margin: auto;
@@ -372,8 +387,12 @@ article:hover {
 article:hover .--picked {
   display: inherit;
   width: 15%;
-  height: 100%;
-  background: #99E2D0;
+}
+
+article:hover .--picked svg {
+  fill: white;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 
 article:hover .desc {

@@ -252,10 +252,19 @@
             font-style: normal;
         }
         .--picked {
-            display: none;
+            width: 0%;
+            height: 100%;
+            background: $clr-tertiary;
+            transition-duration: 500ms;
+            transition-property: width;
+            transform-origin: right;
+            svg {
+                fill: none;
+                transform: rotate(0deg);
+                transition-duration: 500ms;
+            }
         }
         .ico {
-            fill: white;
             width: 35px;
             height: 35px;
             margin: auto;
@@ -265,8 +274,10 @@
             .--picked {
                 display: inherit;
                 width: 15%;
-                height: 100%;
-                background: $clr-tertiary;
+                svg {
+                    fill: white;
+                    transform: rotate(360deg);
+                }
             }
             .desc {
                 width: 70%;
