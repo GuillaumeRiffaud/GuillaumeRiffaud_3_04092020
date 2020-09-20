@@ -73,6 +73,9 @@ section {
     @include mobile-only() {
         flex-direction: column;
     }
+    h6 {
+        display: none;
+    }
 }
 
 .intro {
@@ -182,7 +185,7 @@ nav {
             }
         }
     }
-    .--activestep {
+    .activestep {
         background-color: lighten($clr-primary, 30);
         border-radius: 1rem;
         svg {
@@ -259,7 +262,7 @@ main {
                 width: 50px;
             }
         }
-        .--liked {
+        .liked {
             opacity: 0;
             transition: 500ms;
             &:hover {

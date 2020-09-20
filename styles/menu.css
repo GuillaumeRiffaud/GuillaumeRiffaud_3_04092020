@@ -110,32 +110,32 @@
 
 /* delay each food based on its position as element + the loading duration */
 article:nth-child(1n) {
-  -webkit-animation-delay: 3.2s;
-          animation-delay: 3.2s;
+  -webkit-animation-delay: 2.2s;
+          animation-delay: 2.2s;
 }
 
 /* delay each food based on its position as element + the loading duration */
 article:nth-child(2n) {
-  -webkit-animation-delay: 3.4s;
-          animation-delay: 3.4s;
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
 }
 
 /* delay each food based on its position as element + the loading duration */
 article:nth-child(3n) {
-  -webkit-animation-delay: 3.6s;
-          animation-delay: 3.6s;
+  -webkit-animation-delay: 2.6s;
+          animation-delay: 2.6s;
 }
 
 /* delay each food based on its position as element + the loading duration */
 article:nth-child(4n) {
-  -webkit-animation-delay: 3.8s;
-          animation-delay: 3.8s;
+  -webkit-animation-delay: 2.8s;
+          animation-delay: 2.8s;
 }
 
 /* delay each food based on its position as element + the loading duration */
 article:nth-child(5n) {
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
 }
 
 html {
@@ -166,8 +166,8 @@ html {
   width: 100%;
   height: 100%;
   z-index: 3;
-  -webkit-animation: loading 0s 3s both;
-          animation: loading 0s 3s both;
+  -webkit-animation: loading 0s 2s both;
+          animation: loading 0s 2s both;
 }
 
 .loading img {
@@ -310,12 +310,12 @@ nav li span {
   color: white;
 }
 
-nav .--activestep {
+nav .activestep {
   background-color: #e4d5f6;
   border-radius: 1rem;
 }
 
-nav .--activestep svg {
+nav .activestep svg {
   fill: #9356DC;
 }
 
@@ -437,13 +437,13 @@ main h2 .ico {
   }
 }
 
-main h2 .--liked {
+main h2 .liked {
   opacity: 0;
   -webkit-transition: 500ms;
   transition: 500ms;
 }
 
-main h2 .--liked:hover {
+main h2 .liked:hover {
   opacity: 1;
 }
 
@@ -535,7 +535,7 @@ article em {
   font-style: normal;
 }
 
-article .--picked {
+article .picked {
   width: 0%;
   height: 100%;
   background: #99E2D0;
@@ -547,7 +547,7 @@ article .--picked {
           transform-origin: right;
 }
 
-article .--picked svg {
+article .picked svg {
   fill: none;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
@@ -565,12 +565,12 @@ article:hover {
   background: white;
 }
 
-article:hover .--picked {
+article:hover .picked {
   display: inherit;
   width: 15%;
 }
 
-article:hover .--picked svg {
+article:hover .picked svg {
   fill: white;
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
@@ -599,6 +599,11 @@ article:hover .desc {
   vertical-align: middle;
   height: 2.25rem;
   width: 2.25rem;
+}
+
+.btn:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff93e1), to(#a16be0));
+  background: linear-gradient(#ff93e1, #a16be0);
 }
 
 footer {
