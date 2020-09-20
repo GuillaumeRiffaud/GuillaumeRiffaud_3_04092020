@@ -18,6 +18,7 @@
     $clr-secondary: #FF79DA;
     $clr-tertiary: #99E2D0;
     $clr-footer: #353535;
+    $loading-dur: 3;
     @mixin content-size($size) {
         /* sets font size and icons size adapts automatically */
         font-size: $size;
@@ -30,8 +31,56 @@
     }
     
     @mixin mobile-only {
+        /* changing display for mobile */
         @media screen and (orientation: portrait) {
             @content;
+        }
+    }
+    
+    @keyframes menuscroll {
+        /* menu appearance animation */
+        0% {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes loading {
+        /* make the loading screen over 9000 pixels away */
+        0% {
+            top: 0px;
+        }
+        100% {
+            top: 9001px;
+        }
+    }
+    
+    @keyframes loadingspinner {
+        0% {
+            transform: rotate(0);
+        }
+        10% {
+            transform: rotate(-40deg);
+        }
+        15% {
+            transform: rotate(-40deg);
+        }
+        90% {
+            transform: rotate(1120deg);
+        }
+        100% {
+            transform: rotate(1080deg);
+        }
+    }
+    
+    @for $i from 1 through 5 {
+        /* delay each food based on its position as element + the loading duration */
+        article:nth-child(#{$i}n) {
+            animation-delay: #{$i *0.2+$loading-dur}s;
         }
     }
     
@@ -39,6 +88,25 @@
         font-size: 18px;
         @include mobile-only() {
             font-size: 30px;
+        }
+    }
+    
+    .loading {
+        /* loading screen hiding whole screen for the duration determined */
+        position: fixed;
+        top: 0px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        animation: loading 0s #{$loading-dur}s both;
+        img {
+            height: 25%;
+            width: 25%;
+            animation: loadingspinner 1.2s infinite;
         }
     }
     
@@ -245,6 +313,7 @@
         margin: 5%;
         border-radius: 1em;
         padding-left: 5%;
+        animation: menuscroll 500ms ease-in-out both;
         @include mobile-only() {
             height: 150px;
             box-shadow: 0px 0px 20px 4px lightgrey;
