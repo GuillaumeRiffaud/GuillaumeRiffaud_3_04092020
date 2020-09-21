@@ -203,6 +203,19 @@ nav .ico {
   width: 1.5rem;
 }
 
+@media screen and (max-width: 1149px) {
+  nav {
+    /* sets font size and icons size adapts automatically */
+    font-size: 0.7rem;
+  }
+  nav .ico {
+    display: inline-block;
+    vertical-align: middle;
+    height: 1.05rem;
+    width: 1.05rem;
+  }
+}
+
 @media screen and (orientation: portrait) {
   nav {
     border: none;
@@ -225,6 +238,19 @@ nav h2 .ico {
   vertical-align: middle;
   height: 2.25rem;
   width: 2.25rem;
+}
+
+@media screen and (max-width: 1149px) {
+  nav h2 {
+    /* sets font size and icons size adapts automatically */
+    font-size: 0.8rem;
+  }
+  nav h2 .ico {
+    display: inline-block;
+    vertical-align: middle;
+    height: 1.2rem;
+    width: 1.2rem;
+  }
 }
 
 @media screen and (orientation: portrait) {
@@ -276,6 +302,16 @@ nav li span {
   height: 1.5rem;
   width: 1.5rem;
   color: white;
+}
+
+@media screen and (max-width: 1149px) {
+  nav li {
+    width: 210px;
+  }
+  nav li span {
+    height: 1.2rem;
+    width: 1.2rem;
+  }
 }
 
 @media screen and (orientation: portrait) {

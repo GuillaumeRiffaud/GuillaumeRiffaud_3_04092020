@@ -35,6 +35,12 @@ $clr-footer: #353535;
     }
 }
 
+@mixin tablet-only {
+    @media screen and (max-width: 1149px) {
+        @content;
+    }
+}
+
 html {
     font-size: 18px;
     @include mobile-only() {
@@ -125,6 +131,9 @@ nav {
     align-items: center;
     justify-content: start;
     @include content-size(1rem);
+    @include tablet-only() {
+        @include content-size(.7rem);
+    }
     @include mobile-only() {
         border: none;
         flex-direction: column;
@@ -133,6 +142,9 @@ nav {
         padding-left: 2%;
         margin: 1%;
         @include content-size(1.5rem);
+        @include tablet-only() {
+            @include content-size(.8rem)
+        }
         @include mobile-only() {
             align-self: flex-start;
         }
@@ -164,6 +176,13 @@ nav {
             height: 1.5rem;
             width: 1.5rem;
             color: white;
+        }
+        @include tablet-only() {
+            width: 210px;
+            span {
+                height: 1.2rem;
+                width: 1.2rem;
+            }
         }
         @include mobile-only() {
             width: 70%;

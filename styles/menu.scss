@@ -37,6 +37,12 @@
         }
     }
     
+    @mixin tablet-only {
+        @media screen and (max-width: 1149px) {
+            @content;
+        }
+    }
+    
     @keyframes menuscroll {
         /* menu appearance animation */
         0% {
@@ -161,10 +167,16 @@
         align-items: center;
         justify-content: start;
         @include content-size(1rem);
+        @include tablet-only() {
+            @include content-size(.7rem);
+        }
         h2 {
             padding-left: 2%;
             margin: 1%;
             @include content-size(1.5rem);
+            @include tablet-only() {
+                @include content-size(.8rem)
+            }
         }
         ol {
             display: flex;
@@ -188,6 +200,13 @@
                 height: 1.5rem;
                 width: 1.5rem;
                 color: white;
+            }
+            @include tablet-only() {
+                width: 210px;
+                span {
+                    height: 1.2rem;
+                    width: 1.2rem;
+                }
             }
         }
         .activestep {
@@ -297,6 +316,9 @@
                 margin-left: 7%;
                 text-align: left;
             }
+        }
+        @include tablet-only() {
+            width: 45%;
         }
         @include mobile-only() {
             width: 100%;
