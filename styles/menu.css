@@ -42,100 +42,34 @@
   }
 }
 
-@-webkit-keyframes loading {
-  /* make the loading screen over 9000 pixels away */
-  0% {
-    top: 0px;
-  }
-  100% {
-    top: 9001px;
-  }
-}
-
-@keyframes loading {
-  /* make the loading screen over 9000 pixels away */
-  0% {
-    top: 0px;
-  }
-  100% {
-    top: 9001px;
-  }
-}
-
-@-webkit-keyframes loadingspinner {
-  0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-  }
-  10% {
-    -webkit-transform: rotate(-40deg);
-            transform: rotate(-40deg);
-  }
-  15% {
-    -webkit-transform: rotate(-40deg);
-            transform: rotate(-40deg);
-  }
-  90% {
-    -webkit-transform: rotate(1120deg);
-            transform: rotate(1120deg);
-  }
-  100% {
-    -webkit-transform: rotate(1080deg);
-            transform: rotate(1080deg);
-  }
-}
-
-@keyframes loadingspinner {
-  0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-  }
-  10% {
-    -webkit-transform: rotate(-40deg);
-            transform: rotate(-40deg);
-  }
-  15% {
-    -webkit-transform: rotate(-40deg);
-            transform: rotate(-40deg);
-  }
-  90% {
-    -webkit-transform: rotate(1120deg);
-            transform: rotate(1120deg);
-  }
-  100% {
-    -webkit-transform: rotate(1080deg);
-            transform: rotate(1080deg);
-  }
-}
-
-/* delay each food based on its position as element + the loading duration */
+/* delay each food based on its position as element */
 article:nth-child(1n) {
-  -webkit-animation-delay: 2.2s;
-          animation-delay: 2.2s;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
 }
 
-/* delay each food based on its position as element + the loading duration */
+/* delay each food based on its position as element */
 article:nth-child(2n) {
-  -webkit-animation-delay: 2.4s;
-          animation-delay: 2.4s;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
 }
 
-/* delay each food based on its position as element + the loading duration */
+/* delay each food based on its position as element */
 article:nth-child(3n) {
-  -webkit-animation-delay: 2.6s;
-          animation-delay: 2.6s;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
 }
 
-/* delay each food based on its position as element + the loading duration */
+/* delay each food based on its position as element */
 article:nth-child(4n) {
-  -webkit-animation-delay: 2.8s;
-          animation-delay: 2.8s;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
 }
 
-/* delay each food based on its position as element + the loading duration */
+/* delay each food based on its position as element */
 article:nth-child(5n) {
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 html {
@@ -147,34 +81,6 @@ html {
   html {
     font-size: 30px;
   }
-}
-
-.loading {
-  /* loading screen hiding whole screen for the duration determined */
-  position: fixed;
-  top: 0px;
-  background-color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  -webkit-animation: loading 0s 2s both;
-          animation: loading 0s 2s both;
-}
-
-.loading img {
-  height: 25%;
-  width: 25%;
-  -webkit-animation: loadingspinner 1.2s infinite;
-          animation: loadingspinner 1.2s infinite;
 }
 
 body {
@@ -265,7 +171,7 @@ nav .ico {
   width: 1.5rem;
 }
 
-@media screen and (max-width: 1149px) {
+@media screen and (max-width: 1149px) and (orientation: landscape) {
   nav {
     /* sets font size and icons size adapts automatically */
     font-size: 0.7rem;
@@ -292,7 +198,7 @@ nav h2 .ico {
   width: 2.25rem;
 }
 
-@media screen and (max-width: 1149px) {
+@media screen and (max-width: 1149px) and (orientation: landscape) {
   nav h2 {
     /* sets font size and icons size adapts automatically */
     font-size: 0.8rem;
@@ -336,7 +242,7 @@ nav li span {
   color: white;
 }
 
-@media screen and (max-width: 1149px) {
+@media screen and (max-width: 1149px) and (orientation: landscape) {
   nav li {
     width: 210px;
   }
@@ -517,7 +423,7 @@ section h3 span {
   }
 }
 
-@media screen and (max-width: 1149px) {
+@media screen and (max-width: 1149px) and (orientation: landscape) {
   section {
     width: 45%;
   }
@@ -628,6 +534,8 @@ article:hover .desc {
   margin-bottom: 5%;
   color: white;
   cursor: pointer;
+  -webkit-box-shadow: 0px 0px 20px 4px grey;
+          box-shadow: 0px 0px 20px 4px grey;
   /* sets font size and icons size adapts automatically */
   font-size: 1.5rem;
   padding: 1rem 1.5rem;
@@ -646,6 +554,8 @@ article:hover .desc {
 .btn:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#ff93e1), to(#a16be0));
   background: linear-gradient(#ff93e1, #a16be0);
+  -webkit-box-shadow: 0px 0px 20px 8px grey;
+          box-shadow: 0px 0px 20px 8px grey;
 }
 
 footer {
